@@ -1,14 +1,21 @@
 .page {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-white);
 }
 
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.frame {
+  position: relative;
+  width: min(100vw, 1048px, 122.995svh);
+  aspect-ratio: 1048 / 852;
+  background: var(--color-white);
+}
+
+.primaryPill {
+  position: absolute;
+  top: 47.3005%;
+  left: 39.0267%;
 }

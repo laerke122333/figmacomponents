@@ -8,7 +8,8 @@
  * - Font weights become numbers: Regular -> 400, Medium -> 500, Semi Bold -> 600
  */
 :root {
-  /* Color */
+  --color-white: #fff;
+  --color-blue: #05f;
 
   /* Typography – the font itself is loaded in app/layout.js */
   --font-family-primary: var(--font-inter), sans-serif;

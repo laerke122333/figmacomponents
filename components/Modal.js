@@ -8,9 +8,9 @@ export default function Modal({ isOpen, onClose, title, text }) {
 
   // showModal() gives focus handling, Esc and a backdrop. The open attribute alone does not.
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !dialogRef.current.open) {
       dialogRef.current.showModal();
-    } else {
+    } else if (!isOpen && dialogRef.current.open) {
       dialogRef.current.close();
     }
   }, [isOpen]);
@@ -21,7 +21,19 @@ export default function Modal({ isOpen, onClose, title, text }) {
       className={styles.modal}
       aria-label={title}
       onClose={onClose}
+      onClick={(event) => {
+        if (event.target === dialogRef.current) {
+          dialogRef.current.close();
+        }
+      }}
     >
+      <img
+        className={styles.icon}
+        src="/fluent-emoji-sad-16-regular.svg"
+        alt=""
+        width="53"
+        height="53"
+      />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.text}>{text}</p>
     </dialog>
